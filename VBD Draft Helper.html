@@ -1,0 +1,241 @@
+<html>
+<head>
+  <title>VBD Draft Helper</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <script src="js/bootstrap.js"></script>
+</head>
+<body class="container"> 
+	<h1 class="jumbotron text-center">VBD Draft Sheet</h1>	
+
+<nav class="navbar-static-top" role="navigation">
+  	<div class="container">
+		<ul class="nav nav-pills">
+		  <li class="active"><a href="#">Home</a></li>
+		  <li><a href="#">Profile</a></li>
+		  <li><a href="#">Messages</a></li>
+		</ul>
+  	</div>
+</nav>
+	<section class="instructions">
+		<h2>Instructions:</h2>
+		<ol>
+			<li>Fill in your roster info below. This version uses estimates for VBD, so you do not need to calculate yourself</li>
+			<li>Fill out the number of teams in your league and the budget of each team</li>
+			<li>Enter your scoring settings</li>
+			<li>Choose a Starter and Bench Budget %. A balanced valuation will make value for starters and bench players more equal. A larger Starter % is good for a Stars & Scrubs draft approach. If prices look weird, it's probably because your Starter % is too high or too low. Starter % should be larger than Bench %</li>
+			<li>After clicking process, there will be two links based on your draft style:
+				<dd><strong>Auction:</strong> The projected value of each player is displayed. To use during an auction, enter the amount a player was drafted for in "Paid". This can be used for keepers (enter kept $ amount before draft, mark Keeper as "Yes") or in-draft. Inflation will be calculated on the fly and inflated (or deflated) player values will be shown to the right. You can also keep track of your team and your remaining budget throughout the draft. </dd>
+				<dd><strong>Snake:</strong> Players will be sorted and ranked by the Top 300 players and by each position. You will be able to keep track of players remaining in the draft by assigning each player to an oppononent's team or your team.</dd>
+			</li>
+		</ol>
+	</section>
+	
+	<section class="col-md-4">
+		<h3 class="text-center">Roster Information</h3>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-md-6" for="QB" >QB</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="QB_Roster" type="number" min="0" id="QB">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-6" for="RB" >RB</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="RB_Roster" type="number" min="0" id="RB">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-6" for="WR" >WR</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="WR_Roster" type="number" min="0" id="WR">
+					</div>
+				</div>	
+
+				<div class="form-group">
+					<label class="control-label col-md-6" for="TE" >TE</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="TE_Roster" type="number" min="0" id="TE">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-6" for="Flex" >Flex (RB/WR/TE)</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Flex_Roster" type="number" min="0" id="Flex">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-6" for="K" >K</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="K_Roster" type="number" min="0" id="K">
+					</div>
+				</div>	
+
+				<div class="form-group">
+					<label class="control-label col-md-6" for="Def" >DEF</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Def_Roster" type="number" min="0" id="Def">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-6" for="Bench" >Bench</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Bench_Roster" type="number" min="0" id="Bench">
+					</div>
+				</div>						
+			</form>
+	</section>
+
+	<section class="col-md-3 league">
+		<h3 class="text-center">League Information</h3>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-md-5" for="Teams" ># of Teams</label>
+				    <div class="col-md-4">
+				    	<input class="form-control" name="Teams" type="number" min="0" id="Teams">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-5" for="Budget" >Budget</label>
+				    <div class="col-md-4">
+				    	<input class="form-control" name="Budget" type="number" min="0" id="Budget">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-5" for="Size" >Roster Size</label>
+				    <div class="col-md-4">
+				    	<input class="form-control" name="Size" type="number" min="0" id="Size">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-md-5" for="Spots" >Total Spots</label>
+				    <div class="col-md-4">
+				    	<input class="form-control" name="Spots" type="number" min="0" id="Spots">
+					</div>
+				</div>
+				
+			</form>
+
+	</section>
+
+	<section class="col-md-5">
+		<h3 class="text-center">Scoring Information</h3>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-md-4" for="PTD" >Passing TDs</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Pass_TD" type="number" min="0" id="PTD">
+					</div>
+					<div >
+						points
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-4" for="PYD" >Passing Yards</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Pass_YD" type="number" min="0" id="PYD">
+				    </div>
+					<div >
+				    	points per yard
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-4" for="PINT" >Passing INTs</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Pass_INT" type="number" min="0" id="PINT">
+				    </div>
+					<div >
+				    	points
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-4" for="RuTD" >Rushing TDs</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Rush_TD" type="number" min="0" id="RuTD">
+					</div>
+					<div >
+				    	points
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-4" for="RuYD" >Rushing Yards</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Rush_YD" type="number" min="0" id="RuYD">
+				    </div>
+					<div >
+				    	points per yard
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-4" for="PPRc" >Receptions</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Rec_Rec" type="number" min="0" id="PPRc">
+				    </div>
+					<div >
+				    	points per reception
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-4" for="RcTD" ># of Teams</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Rec_TD" type="number" min="0" id="RcTD">
+				    </div>
+					<div >
+				    	points
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-4" for="RcYD" >Budget</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="Rec_YD" type="number" min="0" id="RcYD">
+				    </div>
+					<div >
+				    	points per yard
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-4" for="Fumbles" >Fumbles Lost</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="FUM" type="number" id="Fumbles">
+				    </div>
+					<div >
+				    	points
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-4" for="COMP" >Completions</label>
+				    <div class="col-md-3">
+				    	<input class="form-control" name="COM" type="number" min="0" id="COMP">
+				    </div>
+					<div >
+				    	points per completion
+					</div>
+				</div>
+			</form>								
+	</section>
+
+	<div class="text-center">
+		<form name="Process" action="XX" method="XX">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>

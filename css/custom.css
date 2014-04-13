@@ -1,0 +1,12 @@
+h3{
+	border-bottom: 2px solid lightgrey;
+}
+
+section{
+	border-style:solid;
+	border-width:2px;
+}
+
+nav{
+	padding-bottom: 25px;
+}
